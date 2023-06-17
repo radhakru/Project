@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<title>This is add Song page</title>
+
+</head>
+
+<body>
+	<section>
+		<!--add Form in the addsongs page-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="my-card">
+						<h1 class="text-center">Add songs Here</h1>
+
+						<!-- adding form -->
+						<form action="" th:action="@{/success}" method="post" th:object="${song}"
+						enctype="multipart/form-data">
+							
+							
+							<!--film name field-->
+							<div class="form-group">
+								<label for="filmname_field">Film Name</label>
+								<input type="text" class="form-control" id="filmname_field" name="filmname"
+									aria-describedby="emailHelp" 
+									placeholder="Enter Filmname" 
+									th:value="${song.filmname}" 
+									required>
+							</div>
+
+							<!--heroname field-->
+							<div class="form-group">
+								<label for="heroname_field">Hero Name</label>
+								<input type="text" class="form-control" id="heroname_field" name="heroname"
+									aria-describedby="emailHelp" placeholder="Enter heroname" required>
+							</div>
+
+
+
+							<!--heroinename field-->
+							<div class="form-group">
+								<label for="heroinename_field">Heroine Name</label>
+								<input type="text" class="form-control" id="heroinename_field" name="heroinename"
+									aria-describedby="emailHelp" placeholder="Enter heroinename" required>
+							</div>
+
+
+
+							<!--Singername field-->
+							<div class="form-group">
+								<label for="singername_field">Singer Name</label>
+								<input type="text" class="form-control" id="singername_field" name="singername"
+									aria-describedby="emailHelp" placeholder="Enter Singername" required>
+							</div>
+
+
+							<!--Songname field-->
+							<div class="form-group">
+								<label for="exampleFormControlFile1">Example file input</label>
+								<input type="file" 
+								class="form-control-file" 
+								id="exampleFormControlFile1"
+								name="profilesong">
+							</div>
+								
+								
+							<button type="submit">submit</button>
+							<button type="reset">Reset</button>
+								
+
+
+
+
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+</body>
+
+</html>

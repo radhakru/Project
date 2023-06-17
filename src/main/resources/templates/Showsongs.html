@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<title>This is add Song page</title>
+
+</head>
+
+<body>
+	<section>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Filmname</th>
+					<th scope="col">Songname</th>
+					<th scope="col">Songs</th>
+					<th scope="col">Singername</th>
+				</tr>
+			</thead>
+			<tbody>
+
+
+				<tr th:each="c : ${song}">
+					<th scope="row">1</th>
+					<td th:text="${c.filmname}">mark</td>
+					<td>
+						<!--comment-->
+						
+						
+						<span th:text="@{${c.songname}}"></span>
+						<!--<audio controls>
+							<source th:src="@{'/Songslib/'+${c.songname}}" type="audio/mpeg">
+						</audio>-->
+
+
+						<!--<audio th:src="@{'/Songslib/'+${c.songname}}" type="audio/mpeg">Audio</audio>
+						-->
+						
+					</td>
+					<td>
+						<audio controls>
+							<source th:src="@{'/Songslib/'+${c.songname}}" type="audio/mpeg">
+						</audio>
+					</td>
+					
+					<td th:text="${c.singername}">Singername</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+	</section>
+</body>
+
+</html>
